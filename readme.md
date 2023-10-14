@@ -136,4 +136,47 @@ This is done by adding the following code to your css file.
 
 #### JavaScript
 
-Javascript is a programming language that is used to add functionality to a website. Javascript is used to make a website interactive, dynamic, and make a website responsive.
+Javascript is a programming language that is used to add functionality to a website. Javascript is used to make a website interactive, dynamic, and make a website responsive. There is a huge variety of things that cane be done with javascript and I will not be able to cover them all. I will cover some of the basics.
+
+Javascript can be added either in an html document, but the best practice is to add it in a separate file and link to it by using the `<script>` tag.
+
+Now I do not know how to start this section so I will just start with the basics.
+
+##### Variables
+
+A variable is a reference to a value. There are three ways to declare a variable `var`, `let`, and `const`. `var` is the original way of declaring a variable but it has since fallen out of favor. This is because `var` can be re-declared and can be changed and almost any time and because `var` is scoped tp the nearest function block. `let` is used to declare a variable that can be changed and is scoped to the nearest enclosing block meaning that it can only be accessed within the block it was declared in. `const` is used to declare a variable that can not be changed. It is best practice to use `const` unless you know that the variable will be changed.
+This is how you declare a variable and assign it a value. We will also see the difference between `var`, `let`, and `const`.
+
+```
+		var name = "David";
+		let age = 26;
+		const isCool = true;
+
+		<!-- difference in scoping  -->
+		function varScoping() {
+			var x = 1;
+
+			if (true) {
+				var x = 2;
+				console.log(x); // will print 2
+			}
+
+			console.log(x); // will print 2
+		}
+
+		function letScoping() {
+			let x = 1;
+
+			if (true) {
+				let x = 2;
+				console.log(x); // will print 2
+			}
+
+			console.log(x); // will print 1
+		}
+
+		function constScoping() {
+			const x = 1;
+			const x = 2; // this will throw an error
+		}
+```
